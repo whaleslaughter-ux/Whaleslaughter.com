@@ -12,14 +12,41 @@
       background: linear-gradient(135deg, #191970, #483d8b);
       color: #fff;
       text-align: center;
-      text-transform: uppercase;
     }
+
+    /* ===== Navigation bar ===== */
+    nav {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Header ===== */
     header {
       padding: 80px 20px 40px;
     }
     header h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      text-transform: uppercase; /* keeps WHALESLAUGHTER in ALL CAPS */
     }
     header p {
       font-size: 1.3rem;
@@ -27,20 +54,7 @@
       margin: 0 auto;
       opacity: 0.9;
     }
-    .cta {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 12px 28px;
-      font-size: 1.1rem;
-      color: #191970;
-      background: #fff;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .cta:hover {
-      background: #e0e0e0;
-    }
+
     footer {
       margin-top: 60px;
       padding: 20px;
@@ -51,11 +65,22 @@
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="fund-whales-evil.html">Fund WHALES Evil</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Landing content -->
   <header>
-    <h1>Whaleslaughter</h1>
-    <p>Bold art, AI music, and unapologetic storytelling.  
+    <h1>WHALESLAUGHTER</h1>
+    <p>Bold art, AI music, and unapologetic storytelling.<br>
        Step into the world where chaos meets craft.</p>
-    <a class="cta" href="about.html">Explore the Universe</a>
   </header>
 
   <footer>
