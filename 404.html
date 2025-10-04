@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 — WHALESLAUGHTER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Uses the same site styles -->
+  <link rel="stylesheet" href="site.css">
+  <meta name="robots" content="noindex">
+  <style>
+    /* 404-specific polish (kept local so it doesn’t affect other pages) */
+    .error-wrap { padding: 40px 20px; }
+    .error-icon { width: 140px; height: 140px; margin: 10px auto 22px; opacity: .9; }
+    .error-title { font-size: 2.2rem; margin: 0 0 .5rem; }
+    .error-sub { font-size: 1.05rem; max-width: 760px; margin: 0 auto 18px; opacity: .95; }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .btn {
+      display: inline-block; padding: 10px 16px; border-radius: 10px;
+      background: rgba(255,255,255,.14); color: #fff; text-decoration: none; font-weight: 700;
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .btn:hover { background: rgba(255,255,255,.2); text-decoration: none; }
+    .whale-note { font-size: .95rem; opacity: .85; margin-top: 14px; }
+    /* gentle “glitch” shimmer on the 404 */
+    .glitch { position: relative; display: inline-block; }
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute; left: 1px; top: 0;
+      clip-path: inset(0 0 55% 0);
+      opacity: .7; transform: translateX(1px);
+    }
+    .glitch::before {
+      content: attr(data-text);
+      position: absolute; left: -1px; top: 0;
+      clip-path: inset(45% 0 0 0);
+      opacity: .7; transform: translateX(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- floating nav from partial -->
+  <div data-include="nav.html"></div>
+
+  <main id="content">
+    <section class="container error-wrap" aria-labelledby="e-title">
+
+      <!-- Simple inline SVG: cyber-whale + waveform -->
+      <svg class="error-icon" viewBox="0 0 200 200" role="img" aria-label="Glitched whale and waveform">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="white" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="white" stop-opacity="0.55"/>
+          </linearGradient>
+        </defs>
+        <!-- whale body -->
+        <path d="M25 110c0-25 22-48 60-48 18 0 34 4 48 12 6 4 16-2 22-1 4 1 3 9-4 13-3 2-7 5-10 7 0 28-22 47-60 47-33 0-56-15-56-30z" fill="url(#g)"/>
+        <!-- “circuit” lines -->
+        <path d="M60 80h22M60 92h36M60 104h52" stroke="white" stroke-opacity=".5" stroke-width="3" />
+        <!-- waveform -->
+        <path d="M20 150h20l5-10 5 20 6-30 6 40 6-34 6 24 6-12 6 6 6-3 6 3 6-8 6 18h40"
+              fill="none" stroke="white" stroke-opacity=".7" stroke-width="3"/>
+      </svg>
+
+      <h1 id="e-title" class="error-title">
+        <span class="glitch" data-text="404">404</span> — AI lost the beat, and the whale ate the page.
+      </h1>
+
+      <!-- Primary line (will be swapped by JS below) -->
+      <p id="error-line" class="error-sub">
+        The AI forgot the rhythm and dropped the bassline. Somewhere in the abyss, our cyber-whale swallowed your link whole.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn" href="/index.html">Return to Home</a>
+        <a class="btn" href="mailto:whaleslaughter@gmail.com?subject=Broken%20link%20on%20whaleslaughter.com&body=I%20hit%20a%20404%20on:%20%0A%0AReferrer:%20">Report a broken link</a>
+      </div>
+
+      <p class="whale-note">
+        Tip: if you typed the URL manually, check your spelling. Otherwise, the page may have migrated to a warmer server.
+      </p>
+    </section>
+
+    <!-- shared footer -->
+    <div data-include="footer.html"></div>
+  </main>
+
+  <!-- partials loader -->
+  <script src="include-partials.js" defer></script>
+
+  <!-- Tiny script to rotate the punchline between #2, #5, and a fresh #3 -->
+  <script>
+    (function () {
+      var lines = [
+        // (2) AI Lost the Beat
+        "The AI forgot the rhythm, dropped the bassline, and erased your page instead. Happens to the best of us.",
+        // (5) The Whale Ate It
+        "Our AI composer fed the wrong dataset to the whale. It swallowed the page whole, then went back to making synthwave.",
+        // (3) Model Overfit (fresh take)
+        "Model overfit. Page underfit. The network confidently hallucinated this URL."
+      ];
+      var el = document.getElementById('error-line');
+      if (el) el.textContent = lines[Math.floor(Math.random() * lines.length)];
+    })();
+  </script>
+</body>
+</html>
