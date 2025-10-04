@@ -136,6 +136,62 @@ body {
 main {
   flex: 1;
 }
+.electric-baroque-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #0A0B10 0%, #151728 50%, #0A0B10 100%);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.baroque-side {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.baroque-side img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  filter: brightness(0.9) contrast(1.1);
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.baroque-side img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+.baroque-center {
+  flex: 1;
+  padding: 0 3rem;
+}
+
+.baroque-center h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: #00f0ff;
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+  margin-bottom: 0.5rem;
+}
+
+.baroque-center p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
 
 .site-footer {
   margin-top: auto;
