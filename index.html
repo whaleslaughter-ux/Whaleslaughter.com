@@ -1,92 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>WHALESLAUGHTER</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #191970, #483d8b);
-      color: #fff;
-      text-align: center;
-    }
-
-    /* ===== Navigation bar ===== */
-    nav {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 35px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== Header ===== */
-    header {
-      padding: 80px 20px 40px;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase; /* keeps WHALESLAUGHTER in ALL CAPS */
-    }
-    header p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-  </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="fund-whales-evil.html">Fund WHALES Evil</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- floating nav -->
+  <div data-include="nav.html"></div>
 
-  <!-- Landing content -->
-  <header>
-    <h1>WHALESLAUGHTER</h1>
-    <p>Bold art, AI music, and unapologetic storytelling.<br>
-       Step into the world where chaos meets craft.</p>
-  </header>
+  <main id="content">
+    <!-- HERO (homepage only) -->
+    <div data-include="header.html"></div>
 
-  <footer>
-    &copy; 2025 WHALESLAUGHTER. All rights reserved.
-  </footer>
+    <!-- optional homepage content -->
+    <section class="container">
+      <p>Welcome to the world where chaos meets craft. Explore the art, music, and stories of WHALESLAUGHTER.</p>
+    </section>
 
+    <!-- footer -->
+    <div data-include="footer.html"></div>
+  </main>
+
+  <script src="include-partials.js" defer></script>
 </body>
 </html>
