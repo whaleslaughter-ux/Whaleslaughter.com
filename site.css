@@ -197,3 +197,70 @@ main {
   margin-top: auto;
 }
 
+/* --- Tools page layout --- */
+.tools {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.tools h1 { margin-bottom: .5rem; }
+.tools .tools-note { opacity: .9; margin-bottom: 2rem; }
+
+/* Glass card */
+.tool-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.tool-left { display: grid; align-content: start; gap: .5rem; }
+.tool-name { font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+.tool-name:hover { text-decoration: underline; }
+
+.price {
+  display: inline-block;
+  padding: .25rem .5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.08);
+  font-size: .9rem;
+}
+
+.whales { font-size: 1.15rem; line-height: 1; }
+
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chips span {
+  font-size: .8rem;
+  padding: .2rem .5rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+.tool-right p { margin: 0 0 .5rem; }
+.meta { opacity: .8; font-size: .9rem; }
+
+.disclosure {
+  margin-top: 2rem;
+  opacity: .8;
+  font-size: .9rem;
+  border-left: 3px solid rgba(255,255,255,.25);
+  padding-left: .6rem;
+}
+
+/* Mobile stacking */
+@media (max-width: 720px) {
+  .tool-card {
+    grid-template-columns: 1fr;
+  }
+  .tool-left { grid-auto-rows: min-content; }
+}
