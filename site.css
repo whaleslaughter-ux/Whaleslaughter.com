@@ -95,6 +95,25 @@ main {
   margin: 0 auto;
   opacity: 0.92;
 }
+.btn {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
 
 /* ===== Footer ===== */
 .site-footer {
@@ -104,3 +123,21 @@ main {
   opacity: 0.8;
   text-align: center;
 }
+/* ===== Sticky footer layout fix ===== */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.site-footer {
+  margin-top: auto;
+}
+
