@@ -205,35 +205,74 @@ a[href^="http"]:not(.btn):not(.button-link):not(.tool-name):focus {
   .tool-card { grid-template-columns: 1fr; }
   .tool-left { grid-auto-rows: min-content; }
 }
-
 /* ======================
-   Donation banner (image on top, content below)
+   Donation banner (polished crop + contrast)
 ====================== */
 .donate-banner {
   text-align: center;
   margin-bottom: 2rem;
+  padding-top: clamp(8px, 1.5vh, 16px); /* clears the floating nav a touch */
 }
 
 .banner-image {
-  width: 100%;
-  max-height: 300px;      /* keep it thin */
-  object-fit: cover;
   display: block;
+  width: 100%;
+
+  /* Responsive, cinematic height without being huge on laptops */
+  height: clamp(280px, 48vh, 560px);
+
+  object-fit: cover;
+  object-position: 50% 32%;  /* keeps both faces nicely in frame */
   margin: 0 auto;
-  filter: brightness(0.92);
+  border-radius: 14px;
+  filter: brightness(0.96) saturate(1.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
-.donate-content { margin-top: 1rem; }
+.donate-content { 
+  margin-top: clamp(12px, 2.4vh, 22px); 
+}
+
+.donate-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
 
 .donate-buttons .btn {
-  margin: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  border-radius: 8px;
+  margin: 0;
+  padding: 12px 18px;
+  font-weight: 800;
+  border-radius: 12px;
+  min-width: 220px; /* avoids awkward wrapping */
+  line-height: 1.1;
 }
 
-/* Optional gold/silver helpers if you use them */
-.btn.gold { background-color: gold; color: #000; border: none; }
-.btn.gold:hover { background-color: #fff34d; }
-.btn.silver { background-color: #c0c0c0; color: #000; border: none; }
-.btn.silver:hover { background-color: #d6d6d6; }
+/* Accessible gold/silver (better contrast + focus) */
+.btn.gold { 
+  background-color: #ffd600; /* stronger gold */
+  color: #000;
+  border: 1px solid rgba(0,0,0,.25);
+}
+.btn.gold:hover,
+.btn.gold:focus { background-color: #ffea00; outline: 2px solid #000; outline-offset: 2px; }
+
+.btn.silver { 
+  background-color: #d0d6df; /* brighter silver for contrast on purple */
+  color: #000;
+  border: 1px solid rgba(0,0,0,.25);
+}
+.btn.silver:hover,
+.btn.silver:focus { background-color: #e2e7ee; outline: 2px solid #000; outline-offset: 2px; }
+
+/* Mobile: favor faces a bit higher and let buttons stack full-width */
+@media (max-width: 640px) {
+  .banner-image {
+    height: 52vh;
+    object-position: 50% 26%;
+  }
+  .donate-buttons .btn { min-width: 100%; }
+}
