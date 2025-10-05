@@ -1,249 +1,98 @@
-/* ============================
-   WHALESLAUGHTER SITE.CSS
-   Restored: Floating Nav + Tools Page Layout + Donation Banner
-=============================*/
-
-:root {
-  --nav-h: 56px;
-  --nav-bg: rgba(10, 10, 30, 0.45);
-}
-
-html, body {
-  margin: 0;
-  color: #fff;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(135deg, #191970, #483d8b) fixed;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===== Floating Nav Bar ===== */
-.site-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  background: var(--nav-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.site-nav ul {
-  list-style: none;
+/* Global Reset and Defaults */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 35px;
 }
 
-.site-nav a {
-  color: #fff;
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* Lemon Yellow Links */
+a {
+  color: #fff44f;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.05rem;
+  transition: color 0.2s ease-in-out, border-bottom 0.2s ease-in-out;
 }
 
-.site-nav a:hover {
-  text-decoration: underline;
+a:hover,
+a:focus {
+  color: #ffffff;
+  border-bottom: 1px solid #fff44f;
 }
 
-.site-nav a.active {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.skip-link {
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  background: #000;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transform: translateY(-120%);
-  transition: transform 0.2s;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
-main {
-  padding: calc(var(--nav-h) + 24px) 20px 40px;
-  flex: 1;
-  text-align: center;
-}
-
+/* Container */
 .container {
-  max-width: 1100px;
+  max-width: 960px;
   margin: 0 auto;
+  padding: 2rem;
 }
 
-.site-footer {
-  margin-top: auto;
-  padding: 24px 20px;
-  font-size: 0.95rem;
-  opacity: 0.8;
-  text-align: center;
-}
-
-/* ===== Tools Page ===== */
-.tools {
-  max-width: 1100px;
-  margin: 4rem auto;
-  padding: 0 1rem;
-}
-
-.tools h1 {
-  margin-bottom: .5rem;
-}
-
-.tools .tools-note {
-  opacity: .9;
-  margin-bottom: 2rem;
-}
-
-.tool-card {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 1.25rem;
-  margin: 1.25rem 0;
-  padding: 1.25rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.07);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  text-align: left;
-}
-
-.tool-left {
-  display: grid;
-  align-content: start;
-  gap: .5rem;
-}
-
-.tool-name {
+/* Buttons */
+.btn {
   display: inline-block;
-  background: rgba(255,255,255,0.1);
-  color: #00f0ff;
-  text-decoration: none;
-  font-weight: 700;
-  padding: 8px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: background 0.2s, transform 0.1s;
-}
-
-.tool-name:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-2px);
-}
-
-.price {
-  display: inline-block;
-  padding: .25rem .5rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.22);
-  background: rgba(255,255,255,.08);
-  font-size: .9rem;
-}
-
-.whales {
-  font-size: 1.15rem;
-  line-height: 1;
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem;
-}
-
-.chips span {
-  font-size: .8rem;
-  padding: .2rem .5rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.2);
-}
-
-.tool-right p {
-  margin: 0 0 .5rem;
-}
-
-.meta {
-  opacity: .8;
-  font-size: .9rem;
-}
-
-.disclosure {
-  margin-top: 2rem;
-  opacity: .8;
-  font-size: .9rem;
-  border-left: 3px solid rgba(255,255,255,.25);
-  padding-left: .6rem;
-}
-
-@media (max-width: 720px) {
-  .tool-card {
-    grid-template-columns: 1fr;
-  }
-  .tool-left {
-    grid-auto-rows: min-content;
-  }
-}
-
-/* ===== Donation Banner ===== */
-.donate-banner {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.banner-image {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-
-.donate-content {
-  margin-top: 1rem;
-}
-
-.donate-buttons .btn {
-  margin: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff44f;
+  color: #0d0d0d;
   font-weight: bold;
   border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  display: inline-block;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
 }
 
-.btn.gold {
-  background-color: gold;
-  color: black;
+.btn:hover,
+.btn:focus {
+  background-color: #ffff66;
+  color: #000;
 }
 
-.btn.silver {
-  background-color: #c0c0c0;
-  color: black;
+/* Banner Images */
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
 }
 
-.micro-lore {
-  font-size: 0.85rem;
-  font-style: italic;
-  opacity: 0.8;
-  margin-top: 0.5rem;
+/* Section Styling */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.875rem;
+  color: #999;
+}
+
+/* Responsive Text Wrapping */
+p {
+  margin-bottom: 1rem;
+  word-wrap: break-word;
 }
