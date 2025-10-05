@@ -1,6 +1,6 @@
 /* Base Layout */
 body {
-  background-color: #0f0f2b;
+  background-color: #0f0f2b; /* deep indigo blue */
   color: white;
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -14,11 +14,17 @@ body {
   padding: 2rem;
 }
 
-/* Headings with Neon Glow */
+/* Headings */
 h1, h2, h3 {
-  color: #FF00FF;
-  text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF66;
+  color: #ffffff;
   font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
 /* Paragraphs */
@@ -26,71 +32,67 @@ p {
   margin-bottom: 1.2rem;
 }
 
-/* Neon Buttons */
-.btn-neon {
-  background-color: transparent;
-  border: 2px solid #00FFFF;
-  color: #00FFFF;
-  font-weight: bold;
-  padding: 0.6em 1.2em;
+/* Tool Buttons */
+.tool-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: #444;
+  color: white;
+  font-weight: 600;
+  padding: 0.75em 1.5em;
+  border: none;
   border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 8px #00FFFF66;
   text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
   display: inline-block;
 }
 
-.btn-neon:hover {
-  background-color: #00FFFF;
-  color: #000;
-  box-shadow: 0 0 20px #00FFFFAA, 0 0 30px #00FFFF55 inset;
+.btn:hover {
+  background-color: #666;
+  transform: translateY(-2px);
 }
 
-/* Neon Links */
+/* Links */
 a {
-  color: #FF5F1F;
+  color: #FF5F1F; /* high contrast orange */
   text-decoration: none;
-  transition: color 0.3s;
 }
 
 a:hover {
-  color: #B6FF00;
-  text-shadow: 0 0 10px #B6FF00;
+  color: #B6FF00; /* lime green for hover */
+  text-shadow: 0 0 4px #B6FF00;
 }
 
-/* Cards / Sections */
+/* Sections */
 section {
   background-color: #1a1a40;
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 0 15px #00000088;
+  box-shadow: 0 0 12px #00000066;
 }
 
-/* Tool-Specific Styles */
-.tools .tools-note {
+/* Notes for sections */
+.tools-note {
   font-style: italic;
-  color: #B6FF00;
+  color: #ccc;
   margin-bottom: 1.5rem;
 }
 
+/* List inside sections */
 .tools ul {
   padding-left: 1.5rem;
   list-style-type: square;
-  color: #00FFFF;
 }
 
 .tools li {
   margin-bottom: 0.6rem;
-}
-
-.tools h2 {
-  color: #FF00FF;
-  border-bottom: 2px solid #FF00FF;
-  padding-bottom: 0.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 4px #FF00FF66;
 }
 
 /* Responsive Tweaks */
@@ -99,8 +101,12 @@ section {
     padding: 1rem;
   }
 
-  .btn-neon {
-    padding: 0.4em 0.8em;
+  .btn {
+    padding: 0.5em 1em;
     font-size: 0.9rem;
+  }
+
+  .tool-buttons {
+    flex-direction: column;
   }
 }
