@@ -226,65 +226,103 @@ main {
     padding: 0 1rem;
   }
 }
-/* Tools page-specific styles - matches updated site theme */
+/* === Tool Card Layout (Tools Page) === */
 
-.tools {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background: rgba(20, 20, 40, 0.6);
-  border-radius: 1rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+.tool-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.07);
   backdrop-filter: blur(10px);
-  color: #e0e0ff;
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-.tools h1 {
-  font-size: 2.75rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(138, 43, 226, 0.4);
+.tool-left {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
 }
 
-.tools-note {
-  font-style: italic;
-  font-size: 1.1rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #bbb;
-}
-
-/* Modern gradient buttons */
-
-.tool-btn {
+.tool-name {
   display: inline-block;
-  margin: 1rem;
-  padding: 0.85rem 1.8rem;
-  border-radius: 0.75rem;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(to right, #663399, #8a2be2);
+  background: rgba(255,255,255,0.1);
+  color: var(--color-cyan);
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  transition: background 0.2s, transform 0.1s;
 }
 
-.tool-btn:hover {
-  background: linear-gradient(to right, #8a2be2, #663399);
-  text-shadow: 0 0 6px #ffffffaa;
-  transform: scale(1.05);
+.tool-name:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
 }
 
-/* Responsive layout */
+.price {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.08);
+  font-size: 0.9rem;
+}
 
-@media (max-width: 600px) {
-  .tool-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin: 1rem 0;
+.whales {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chips span {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.tool-right {
+  text-align: left;
+}
+
+.tool-right p {
+  margin: 0 0 0.5rem;
+}
+
+.meta {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.disclosure {
+  margin-top: 2rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  border-left: 3px solid rgba(255,255,255,0.25);
+  padding-left: 0.6rem;
+}
+
+/* Responsive stacking */
+@media (max-width: 720px) {
+  .tool-card {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-left {
+    grid-auto-rows: min-content;
   }
 }
-
