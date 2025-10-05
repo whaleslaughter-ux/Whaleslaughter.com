@@ -1,6 +1,6 @@
 /* ============================
    WHALESLAUGHTER SITE.CSS
-   Restored: Floating Nav + Tools Page Layout
+   Restored: Floating Nav + Tools Page Layout + Donation Banner
 =============================*/
 
 :root {
@@ -202,102 +202,48 @@ main {
     grid-auto-rows: min-content;
   }
 }
-.hero-banner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+
+/* ===== Donation Banner ===== */
+.donate-banner {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .banner-image {
   width: 100%;
-  height: auto;
-  display: block;
+  max-height: 300px;
   object-fit: cover;
-  filter: brightness(0.85);
+  display: block;
+  margin: 0 auto;
 }
 
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  color: #fff;
-  max-width: 40%;
-  z-index: 2;
+.donate-content {
+  margin-top: 1rem;
 }
 
-.overlay-text h1 {
-  font-size: 3em;
-  margin: 0 0 0.2em;
-  text-shadow: 0 0 8px black;
+.donate-buttons .btn {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.overlay-text p {
-  font-size: 1.2em;
-  margin-bottom: 1em;
-  text-shadow: 0 0 6px black;
-}
-
-.overlay-text .btn {
+.btn.gold {
   background-color: gold;
   color: black;
-  padding: 0.7em 1.2em;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
-.overlay-text .btn:hover {
-  background-color: #fff200;
-}
-
-.hero-banner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.banner-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  filter: brightness(0.85);
-}
-
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  color: #fff;
-  max-width: 40%;
-  z-index: 2;
-}
-
-.overlay-text h1 {
-  font-size: 3em;
-  margin: 0 0 0.2em;
-  text-shadow: 0 0 8px black;
-}
-
-.overlay-text p {
-  font-size: 1.2em;
-  margin-bottom: 1em;
-  text-shadow: 0 0 6px black;
-}
-
-.overlay-text .btn {
-  background-color: gold;
+.btn.silver {
+  background-color: #c0c0c0;
   color: black;
-  padding: 0.7em 1.2em;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
-.overlay-text .btn:hover {
-  background-color: #fff200;
+.micro-lore {
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 0.5rem;
 }
