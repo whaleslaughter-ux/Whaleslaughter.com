@@ -283,3 +283,19 @@ a[href^="http"]:not(.btn):not(.button-link):not(.tool-name):focus {
   }
   .donate-buttons .btn { min-width: 100%; }
 }
+.btn-link {
+  padding: .45rem .9rem;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;                /* makes text readable on dark backgrounds */
+  background: rgba(255,255,255,.1);  /* faint translucent backing */
+  font-weight: 600;
+  transition: background .25s, color .25s, border-color .25s;
+}
+
+.btn-link:hover {
+  background: rgba(255,255,255,.25);
+  color: #000;                /* inverts on hover for contrast */
+  border-color: rgba(255,255,255,.5);
+}
