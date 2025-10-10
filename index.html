@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WHALESLAUGHTER</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site.css" />
+  <style>
+    main { max-width: 960px; margin: 0 auto; padding: 3rem 1rem 5rem; }
+    .hero { text-align: center; padding: 4rem 1rem 3rem; }
+    .hero img { width: 100%; max-height: 480px; object-fit: cover; border-radius: 18px; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 1rem 0 .5rem; letter-spacing: .05em; }
+    p.lead { font-size: 1.1rem; opacity: .85; margin-bottom: 3rem; }
+
+    .track-section { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: center; }
+    .track-cover { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; }
+    .track-title { margin: 0 0 .25rem 0; letter-spacing: .02em; }
+    .track-meta { opacity: .8; margin: 0 0 1rem 0; }
+    .track-audio { width: 100%; margin: .5rem 0 0 0; }
+    .track-ctas { display: flex; gap: 1rem; margin-top: .75rem; flex-wrap: wrap; }
+    .btn-link { padding: .5rem .9rem; border: 1px solid rgba(255,255,255,.25); border-radius: 8px; text-decoration: none; }
+    .track-note { margin-top: 1.5rem; line-height: 1.6; opacity: .9; }
+    .lyrics { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.15); }
+    @media (max-width: 720px) { .track-section { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
 
-  <!-- floating nav -->
+  <!-- nav include -->
   <div data-include="nav.html"></div>
 
-  <main id="content">
-    <!-- HERO (homepage only) -->
-    <div data-include="header.html"></div>
-
-    <!-- optional homepage content -->
-    <section class="container">
-      <p>Welcome to the world where chaos meets craft. Explore the art, music, and stories of WHALESLAUGHTER.</p>
+  <main>
+    <section class="hero">
+      <img src="assets/index/whales-10k.webp" alt="WHALESLAUGHTER banner image" loading="eager" />
+      <h1>WHALESLAUGHTER</h1>
+      <p class="lead">Strength born of ruin. Beauty without permission.</p>
     </section>
 
-    <!-- footer -->
-    <div data-include="footer.html"></div>
+    <section class="track-section">
+      <img class="track-cover" src="assets/index/whales-10k.webp" alt="Cover art for 10K and Still Irrelevant" />
+
+      <div>
+        <h2 class="track-title">10K and Still Irrelevant</h2>
+        <p class="track-meta">A steel-jaw grin at clout culture. © 2025 WHALESLAUGHTER.</p>
+
+        <audio class="track-audio" controls preload="metadata" src="assets/audio/10k-and-still-irrelevant.mp3">
+          Your browser does not support the audio element.
+        </audio>
+
+        <div class="track-ctas">
+          <a class="btn-link" href="assets/audio/10k-and-still-irrelevant.mp3" download>Download MP3</a>
+          <a class="btn-link" href="/fund-whales-evil.html">Tip Jar</a>
+        </div>
+
+        <p class="track-note">
+          Headphones recommended. Volume normalized for web playback.
+        </p>
+      </div>
+    </section>
+
+    <section class="lyrics">
+      <h3>Notes / Lyrics</h3>
+      <p>
+        (Add your verse or artist statement here — it enhances accessibility and gives SEO a human signal.)
+      </p>
+    </section>
   </main>
+
+  <!-- footer include -->
+  <div data-include="footer.html"></div>
 
   <script src="include-partials.js" defer></script>
 </body>
